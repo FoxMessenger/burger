@@ -1,15 +1,20 @@
 //======================
 //	DEPENDENCIES
 //======================
+var express 		= require('express');
+// var exphbr			= require('express-handlebars');
+var methodOverride 	= require('method-override')
+var bodyParser 		= require('body-parser');
+var mysql			= require('mysql');
 
-var bodyParser 	= require('body-parser');
-var express 	= require('express');
-var app 		= express();
-var path 		= require('path');
-var apiRoutes 	= require('./app/routing/apiRoutes')(app);
-var PORT 		= process.env.PORT || 3000;
-var mysql		= require('mysql');
-var orm			= require('orm');
+
+var orm				= require('orm');
+var apiRoutes 		= require('./app/routing/apiRoutes')(app);
+var app 			= express();
+var PORT 			= process.env.PORT || 3000;
+
+
+
 
 // get all of our static files in the public folder.
 app.use(express.static('./public'));
