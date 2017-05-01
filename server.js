@@ -25,6 +25,8 @@ app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
+app.use('/', router);
+
 app.listen(PORT, function() {
 	console.log('App listening on PORT ' + PORT);
 });

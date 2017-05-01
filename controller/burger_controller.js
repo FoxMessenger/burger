@@ -6,7 +6,14 @@ var router = express.Router()
 
 // Home page route
 router.get('/', function (req, res, next) {
-  res.send('Burger Main Page')
+  res.send('Burger Main Page');
+  
+  	burger.selectAll(function(data){
+  
+  console.log(data)	
+  
+  });
+  
 })
 
 module.exports = router;
