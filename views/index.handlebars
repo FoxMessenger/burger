@@ -1,24 +1,27 @@
-<h1>Umami Burger</h1>
+<div class='container' style='text-align: center'>
+  <h1>UMAMI BURGER</h1>
 
-<h2>Experience the Umami</h2>
+  <h2>Welcome to Umami Burger</h2>
+<div>
 
-<ul>
-  {{#each burger}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.burger_name}}
+<div class='col-xs-12 col-sm-6 col-lg-6'>
+  <ul>
+    {{#each burger}}
+      {{#unless this.devoured}}
+        <li>
+          {{this.burger_name}}
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button class='btn' type="submit">Devour</button>
-        </form>
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="true">
+            <button class='btn' type="submit">Devour</button>
+          </form>
 
-        {{devour-burger}}
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
+          {{devour-burger}}
+        </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+</div>
 <h2>Burgers you've devoured</h2>
 
 <ul>
@@ -52,5 +55,5 @@
     <input type="radio" name="devoured" value="0"> Thrown Up
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button class='btn' type="submit">Add Burger</button>
 </form>

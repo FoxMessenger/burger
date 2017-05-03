@@ -1,7 +1,11 @@
 body {
-    height : 100px;
+    height: 100px;
     width: 100px;
     color: red;
     background-color: purple;
     margin-bottom: 30px;
+}
+
+li {
+	text-decoration: none;
 }
