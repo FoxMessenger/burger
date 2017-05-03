@@ -2,8 +2,8 @@
 //	DEPENDENCIES
 //======================
 var express 		= require('express');
-var exphbr			= require('express-handlebars');
-// var apiRoutes 		= require('./app/routing/apiRoutes')(app);
+var exphbs			= require('express-handlebars');
+
 var methodOverride 	= require('method-override')
 var bodyParser 		= require('body-parser');
 var mysql			= require('mysql');
@@ -14,8 +14,7 @@ var orm				= require('./config/orm');
 var app 			= express();
 var PORT 			= process.env.PORT || 3000;
 
-// require('./app/routing/apiRoutes.js')(app);
-// require('./app/routing/htmlRoutes.js')(app);
+app.use(methodOverride('_method'));
 
 // get all of our static files in the public folder.
 app.use(express.static('./public'));
@@ -24,6 +23,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 app.use('/', router);
 

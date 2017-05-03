@@ -4,30 +4,33 @@ var router = express.Router()
 
 var burger 	= require('./../models/burger.js');
 
-
 // Home page route
-router.get('/', function (req, res) {
-  // res.send('Burger Main Page');
+router.get('/', function (request, result) {
+  // result.send('Burger Main Page');
   	burger.selectAll(function(data){
   		var burgerData = {
   			burger: data
   		}
-
-  		res.render("index", burgerData);	
-
+  		result.render('index', burgerData);	
 	});
 });
 
-router.post('/', function (req, res) {
-  	
-  	burger.addOne(value, function(data){
+// // post informational update to the databse on whether a burger was eaten or not
+// router.post('/', function (request, result) {
+//   	//grab the tableInput and boolean, the values from the request, and the callback
+//   	burger.addOne(['burger_name', 'devoured'], [req.body.buger_name, req.body.devoured], function(data){
   
-  		res.send(data);	
-	});
+//   		result.redirect('/');	
+// 	});
+// });
 
-  	var value = req.body;
-  	// req.body
-  	
-});
+// // update the database
+// router.put('/:id', function(require, result) {
+// 	// the identifier contains the route parameter id
+// 	var identifier = 'id = ' + req.params.id;
+
+// 	console.log('this is the identifier' + identifier);
+// })
+
 
 module.exports = router;
