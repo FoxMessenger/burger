@@ -15,20 +15,19 @@ var orm = {
 	
 		connection.query(queryString, [tableInput], function(err, result) {
 			if (err) throw err;
-			console.log(result);
 			callBack(result);
 		});
 	},
 
-	// insertOne: function(tableInput, columnName, value, callBack) {
-	//     var queryString = 'INSERT INTO ?? VALUES ? ?';
-	//     console.log(queryString);
+	insertOne: function(tableInput, columnName, value, callBack) {
+	    var queryString = 'INSERT INTO ?? VALUES ? ?';
 
-	//     connection.query(queryString, [tableInput, columnName, value], function (err, result) {
-	// 		if (err) throw err;
-	// 		console.log(result);
-	//     });
-	// },
+	    connection.query(queryString, [tableInput, columnName, value], function (err, result) {
+			if (err) throw err;
+			callBack(result);
+
+	    });
+	},
   
 	// updateOne: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
 	// 	var queryString = "UPDATE ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";

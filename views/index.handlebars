@@ -1,29 +1,50 @@
-<h1>Burger Eats</h1>
-
-<h3>Add the movies you plan to watch</h3>
-
 <ul>
-  {{#each movies}}
-  	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Movie: {{this.movie}} 
-       <form action = ‘/{{this.id}}?_method=DELETE’ method=‘POST’> 	<button type="submit">Delete</button></form></p>
-  	</li>
+  {{#each quotes}}
+    <li>
+      <p><span class="label">ID:</span> {{this.id}}</p>
+      <p><span class="label">Quote:</span> {{this.quote}}</p>
+      <p><span class="label">Author:</span> {{this.author}}</p>
+
+      <form action="/{{this.id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{this.id}}">
+        <button type="submit">Delete</button>
+      </form>
+
+      <a href="/{{this.id}}">Update this quote</a>
+    </li>
   {{/each}}
 </ul>
 
-<form action="/" method="POST">
-	<textarea type="text" name="movie"></textarea>
+<h2>Add a Quote</h2>
 
-	<button type="submit">Submit</button>
+<form class="create-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="auth">Author:</label>
+    <input type="text" id="auth" name="author">
+  </div>
+
+  <div class="form-group">
+    <label for="quo">Quote:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+  </div>
+
+  <button type="submit">Add Quote</button>
 </form>
-<hr/>
-<form action="/?_method=PUT" method="POST" class="button-size">
-  <input type="text" name="id" placeholder="id">
-    <textarea type="text" name="movie" placeholder="movie"></textarea>
-    <button type="submit">Update the Movie!</button>
+
+<h1>Update the quote with an id of {{this.id}}</h1>
+
+<form class="create-update-form" action="/{{this.id}}?_method=PUT" method="POST">
+
+  <div class="form-group">
+    <label for="auth">Author:</label>
+    <input type="text" id="auth" name="author" value="{{this.author}}">
+  </div>
+
+  <div class="form-group">
+    <label for="quo">Quote:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40">{{this.quote}}</textarea>
+  </div>
+
+  <button type="submit">Update Quote</button>
 </form>
-
-
-# Setup the index.handlebars to have the template that Handlebars can render onto.
-# Create a button in index.handlebars that will submit the user input into the database.

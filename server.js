@@ -2,7 +2,7 @@
 //	DEPENDENCIES
 //======================
 var express 		= require('express');
-// var exphbr			= require('express-handlebars');
+var exphbr			= require('express-handlebars');
 // var apiRoutes 		= require('./app/routing/apiRoutes')(app);
 var methodOverride 	= require('method-override')
 var bodyParser 		= require('body-parser');
