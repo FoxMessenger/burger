@@ -3,17 +3,17 @@
 <h2>Experience the Umami</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
     {{#unless this.devoured}}
       <li>
         {{this.burger_name}}
 
         <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
-          <button type="submit">Time to Eat!</button>
+          <button class='btn' type="submit">Devour</button>
         </form>
 
-        {{> burgers/devour-burger}}
+        {{devour-burger}}
       </li>
     {{/unless}}
   {{/each}}

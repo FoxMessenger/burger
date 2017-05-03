@@ -15,22 +15,22 @@ router.get('/', function (request, result) {
 	});
 });
 
-// // post informational update to the databse on whether a burger was eaten or not
-// router.post('/', function (request, result) {
-//   	//grab the tableInput and boolean, the values from the request, and the callback
-//   	burger.addOne(['burger_name', 'devoured'], [req.body.buger_name, req.body.devoured], function(data){
+// post informational update to the databse on whether a burger was eaten or not
+router.post('/', function (request, result) {
+  	//grab the tableInput and boolean, the values from the request, and the callback
+  	burger.addOne(['burger_name', 'devoured'], [request.body.buger_name, request.body.devoured], function(data){
   
-//   		result.redirect('/');	
-// 	});
-// });
+  		result.redirect('/');	
+	});
+});
 
-// // update the database
-// router.put('/:id', function(require, result) {
-// 	// the identifier contains the route parameter id
-// 	var identifier = 'id = ' + req.params.id;
+// update the database
+router.put('/:id', function(request, result) {
+	// the identifier contains the route parameter id
+	var identifier = 'id = ' + request.params.id;
 
-// 	console.log('this is the identifier' + identifier);
-// })
+	console.log('this is the identifier' + identifier);
+})
 
 
 module.exports = router;
