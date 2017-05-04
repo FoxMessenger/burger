@@ -9,20 +9,24 @@ var burger = {
 		})
 	},
 	
+	
+	// tableInput = burger ??
+	// columnName = burger_name (??)
+	// value = request.body.burger_name ?
+
 	// create function
-	addOne: function(tableInput, value, callback) {
+	addOne: function(value, callback) {
 		// this will take in the data table, the col, the values, and then the call back
-		orm.addOne('burger', tableInput, value, function(result) {
-			
+		orm.addOne('burger', 'burger_name', value, function(result) {
 			callback(result);
 
 		})
 	},
 	
 	// this will take the data table, object column values, the condition, and the callback
-  	updateOne: function(ColumnValues, identifier, callback) {
+  	updateOne: function(identifier, callback) {
     	
-    	orm.updateOne('burgers', ColumnValues, identifier, function(result) {
+    	orm.updateOne('burgers', 'burger_name', identifier, function(result) {
 		
 			callback(result);
 
