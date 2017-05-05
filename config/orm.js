@@ -47,14 +47,14 @@ var orm = {
 	// tableInput = burgers
 	// columName = devoured
 	// condition = true or false, in this case 1
-	updateOne: function(tableInput, columnName, condition, idNumber, callback) {
-		var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?"
+	updateOne: function(tableInput, columnName, condition, columnId, idNumber, callback) {
+		var queryString = "UPDATE ?? SET ?? = ? WHERE ? = ?"
 
-	    connection.query(queryString, [tableInput, columnName, condition], function (err, result) {
+	    connection.query(queryString, [tableInput, columnName, condition, columnId, idNumber], function (err, result) {
 				if (err) {
 					console.log("update One err: " + err);
 				}
-				callBack(result);
+				callback(result);
 	    });		
 	},
 

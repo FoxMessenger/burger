@@ -26,7 +26,7 @@ var burger = {
 	// this will take the data table, object column values, the condition, and the callback
   	updateOne: function(condition, idNumber, callback) {
     	
-    	orm.updateOne("burgers", "devoured", condition, idNumber, function(result) {
+    	orm.updateOne("burgers", "devoured", condition, "id", idNumber, function(result) {
 		
 			callback(result);
 
