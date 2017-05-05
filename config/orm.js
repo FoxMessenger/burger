@@ -11,7 +11,7 @@ var connection = require("./connection.js");
 
 var orm = {
 	// select everything from the database and return it to the client 
-	selectAll: function(tableInput, callBack) {
+	selectAll: function(tableInput, callback) {
 		var queryString = "SELECT * FROM ??";
 	
 		connection.query(queryString, [tableInput], function(err, result) {
@@ -19,16 +19,16 @@ var orm = {
 					console.log("select All err: " + err);
 				}
 				// console.log(result);
-				callBack(result);
+				callback(result);
 		});
 	},
 
 	// add a new burger by the input given.
-	// tableInput = burger ??
+	// tableInput = burgers ??
 	// columnName = burger_name (??)
 	// value = request.body.burger_name ?
-	addOne: function(tableInput, columnName, value, callBack) {
-	    var queryString = "INSERT INTO ?? (??) VALUES ?";
+	addOne: function(tableInput, columnName, value, callback) {
+	    var queryString = "INSERT INTO ?? (??) VALUES (?)";
 
 	    connection.query(queryString, [tableInput, columnName, value], function (err, result) {
 				if (err) {
@@ -39,7 +39,7 @@ var orm = {
 				// console.log("the column name is: " + columnName)
 				// console.log("the value is: " + value)
 
-				callBack(result);
+				callback(result);
 
 	    });
 	},

@@ -25,7 +25,7 @@ router.post("/", function (request, result) {
   	console.log("add post ran...")
   	
   	burger.addOne(request.body.burger_name, function(){
-  		console.log(request.body)
+  		// console.log(request.body)
   		result.redirect("/");	
 	});
 });

@@ -17,7 +17,7 @@ var burger = {
 	// create function
 	addOne: function(value, callback) {
 		// this will take in the data table, the col, the values, and then the call back
-		orm.addOne("burger", "burger_name", value, function(result) {
+		orm.addOne("burgers", "burger_name", value, function(result) {
 			callback(result);
 
 		})
