@@ -35,13 +35,12 @@ router.post("/", function (request, result) {
 // update the database
 router.put("/:id", function(request, result) {
 	// the identifier contains the route parameter id
-	var idNumber = "id = " + request.params.id;
+	var idNumber = request.params.id;
 	
 	console.log("id number is: ", idNumber)
 	console.log("devoured is: ", request.body.devoured)
-	burger.updateOne({
-		devoured: request.body.devoured
-	}, idNumber, function(){
+	
+	burger.updateOne(request.body.devoured, idNumber, function(){
 		result.redirect("/");	
 	});
 });

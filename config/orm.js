@@ -48,7 +48,7 @@ var orm = {
 	// columName = devoured
 	// condition = true or false, in this case 1
 	updateOne: function(tableInput, columnName, condition, columnId, idNumber, callback) {
-		var queryString = "UPDATE ?? SET ?? = ? WHERE ? = ?"
+		var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?"
 
 	    connection.query(queryString, [tableInput, columnName, condition, columnId, idNumber], function (err, result) {
 				if (err) {
