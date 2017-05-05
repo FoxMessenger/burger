@@ -14,16 +14,34 @@
             {{this.burger_name}}
 
             <form action="/{{this.id}}?_method=PUT" method="POST">
-              <input type="hidden" name="devoured" value="true">
-              <button class='btn' type="submit">Devour</button>
+              <input type="hidden" name="devoured" value="1">
+              <button class="btn" type="submit">Devour</button>
             </form>
-            {{devour-burger}}
+
           </li>
         {{/unless}}
       {{/each}}
     </ul>
 
-    <h2>Add A New Burger</h2>
+<h2>Burgers you've devoured</h2>
+
+  <ul>
+    {{#each burger}}
+      {{#if this.devoured}}
+        <li>
+          {{this.burger_name}}
+
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="0">
+            <button class="btn" type="submit">Remove!</button>
+          </form>
+
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+
+   <h2>Add A New Burger</h2>
       <form class="create-update-form" action="/" method="POST">
 
       <div class="form-group">
@@ -36,21 +54,3 @@
       </form>
   </div>
 
-<h2>Burgers you've devoured</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if this.devoured}}
-      <li>
-        {{this.burger_name}}
-
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">Remove!</button>
-        </form>
-
-        {{> burgers/devour-burger}}
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
