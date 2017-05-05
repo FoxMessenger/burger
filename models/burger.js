@@ -31,16 +31,7 @@ var burger = {
 			callback(result);
 
 		})
-    },
-  		
-		// this will take the data table, the condition, and the callback
-  	// devour: function(condition, callback) {
-	  //   orm.devour("burgers", condition, function(result) {
-	      	
-	  //     	callback(result);
-	
-	  //   });
-  	// }
+    }, 
 }
 
 module.exports = burger;

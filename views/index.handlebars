@@ -22,35 +22,29 @@
         {{/unless}}
       {{/each}}
     </ul>
-
-<h2>Burgers you've devoured</h2>
+  <h2>Burgers you've devoured</h2>
 
   <ul>
     {{#each burger}}
       {{#if this.devoured}}
         <li>
           {{this.burger_name}}
-
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="0">
-            <button class="btn" type="submit">Remove!</button>
-          </form>
-
         </li>
       {{/if}}
     {{/each}}
   </ul>
+</div>
 
-   <h2>Add A New Burger</h2>
-      <form class="create-update-form" action="/" method="POST">
 
-      <div class="form-group">
-        <label for="newburger">Burger Name:</label>
-        <input type="text" id="newburger" name="burger_name">
-      </div>
+<h2>Add A New Burger</h2>
+<form class="create-update-form" action="/" method="POST">
+
+<div class="form-group">
+  <label for="newburger">Burger Name:</label>
+  <input type="text" id="newburger" name="burger_name">
+</div>
 
   
-      <button class='btn' type="submit">Add Burger</button>
-      </form>
-  </div>
+<button class='btn' type="submit">Add Burger</button>
+</form>
 

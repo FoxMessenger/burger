@@ -57,30 +57,6 @@ var orm = {
 				callback(result);
 	    });		
 	},
-
-// 	  updateOne: function(tableInput, columnName, colVal, identifierCol, identifier, callback) {
-//         var queryString = 'UPDATE ?? SET ?? = ? WHERE ?? = ? '
-//         connection.query(queryString, [tableInput, columnName, colVal, identifierCol, identifier], function (err, result) {
-//                 if (err) {
-//                     console.log('update One err: ' + err);
-//                 }
-
-//                 callBack(result);
-
-//         });
-//     },
-//       updateOne: function(colVal, identifier, callback) {
-
-//         orm.updateOne('burgers', 'devour', colVal, "id", identifier, function(result) {
-
-//             callback(result);
-
-//         })
-//     },
-
-// var queryString = "UPDATE burgers SET burger_name = ? WHERE id = ?"
-// var query = "UPDATE burgers SET  devour = 'true' WHERE id = '2'
-// 
 };	
 
 module.exports = orm;

@@ -38,7 +38,7 @@ router.put("/:id", function(request, result) {
 	var idNumber = "id = " + request.params.id;
 	
 	console.log("id number is: ", idNumber)
-	
+	console.log("devoured is: ", request.body.devoured)
 	burger.updateOne({
 		devoured: request.body.devoured
 	}, idNumber, function(){
