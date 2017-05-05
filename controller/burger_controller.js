@@ -22,7 +22,7 @@ router.get("/", function (request, result) {
 // post informational update to the databse on whether a burger was eaten or not
 router.post("/", function (request, result) {
   	//grab the values from the request, and the callback
-  	console.log("add post ran...")
+  	// console.log("add post ran...")
   	
   	burger.addOne(request.body.burger_name, function(){
   		// console.log(request.body)
@@ -35,10 +35,16 @@ router.post("/", function (request, result) {
 // update the database
 router.put("/:id", function(request, result) {
 	// the identifier contains the route parameter id
-	var identifier = "id = " + request.params.id;
-
-	console.log("this is the identifier" + identifier);
-})
+	var idNumber = "id = " + request.params.id;
+	
+	console.log("id number is: ", idNumber)
+	
+	burger.updateOne({
+		devoured: request.body.devoured
+	}, idNumber, function(){
+		result.redirect("/");	
+	});
+});
 
 
 module.exports = router;

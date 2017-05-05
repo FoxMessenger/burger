@@ -24,9 +24,9 @@ var burger = {
 	},
 	
 	// this will take the data table, object column values, the condition, and the callback
-  	updateOne: function(identifier, callback) {
+  	updateOne: function(condition, idNumber, callback) {
     	
-    	orm.updateOne("burgers", "burger_name", identifier, function(result) {
+    	orm.updateOne("burgers", "devoured", condition, idNumber, function(result) {
 		
 			callback(result);
 
@@ -34,13 +34,13 @@ var burger = {
     },
   		
 		// this will take the data table, the condition, and the callback
-  	devour: function(identifier, callback) {
-	    orm.devour("burgers", identifier, function(result) {
+  	// devour: function(condition, callback) {
+	  //   orm.devour("burgers", condition, function(result) {
 	      	
-	      	callback(result);
+	  //     	callback(result);
 	
-	    });
-  	}
+	  //   });
+  	// }
 }
 
 module.exports = burger;

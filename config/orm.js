@@ -44,27 +44,43 @@ var orm = {
 	    });
 	},
 
-	updateOne: function(tableInput, columnName, identifier, callback) {
-		var queryString = "UPDATE ?? SET ?? WHERE ?"
-	    connection.query(queryString, [tableInput, columnName, identifier], function (err, result) {
+	// tableInput = burgers
+	// columName = devoured
+	// condition = true or false, in this case 1
+	updateOne: function(tableInput, columnName, condition, idNumber, callback) {
+		var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?"
+
+	    connection.query(queryString, [tableInput, columnName, condition], function (err, result) {
 				if (err) {
 					console.log("update One err: " + err);
 				}
-
 				callBack(result);
-
 	    });		
 	},
 
-	devour: function(tableInput, identifier, callback) {
-		var queryString = "DELETE FROM ?? WHERE ?"
-		connection.query(queryString, [tableInput, identifier], function (err, result) {
-			if (err) {
-					console.log("devour err: " + err);
-				}
-			callback(result);
-		}) 
-	}
+// 	  updateOne: function(tableInput, columnName, colVal, identifierCol, identifier, callback) {
+//         var queryString = 'UPDATE ?? SET ?? = ? WHERE ?? = ? '
+//         connection.query(queryString, [tableInput, columnName, colVal, identifierCol, identifier], function (err, result) {
+//                 if (err) {
+//                     console.log('update One err: ' + err);
+//                 }
+
+//                 callBack(result);
+
+//         });
+//     },
+//       updateOne: function(colVal, identifier, callback) {
+
+//         orm.updateOne('burgers', 'devour', colVal, "id", identifier, function(result) {
+
+//             callback(result);
+
+//         })
+//     },
+
+// var queryString = "UPDATE burgers SET burger_name = ? WHERE id = ?"
+// var query = "UPDATE burgers SET  devour = 'true' WHERE id = '2'
+// 
 };	
 
 module.exports = orm;
