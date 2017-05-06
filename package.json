@@ -23,7 +23,7 @@
   "dialect": "mysql"
 },
   "homepage": "https://github.com/FoxMessenger/burger#readme",
-  "dependencies": {
+  "dependencies": { 
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-handlebars": "^3.0.0",
