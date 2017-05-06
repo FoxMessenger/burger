@@ -15,6 +15,13 @@
   "bugs": {
     "url": "https://github.com/FoxMessenger/burger/issues"
   },
+  "development": {
+  "host": "127.0.0.1",
+  "username": "root",
+  "password": "",
+  "database": "burgers_db",
+  "dialect": "mysql"
+},
   "homepage": "https://github.com/FoxMessenger/burger#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
