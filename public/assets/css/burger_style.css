@@ -1,3 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box
+}
+html {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+body {
+    box-shadow: inset 0 -5px 45px rgba(100, 100, 100, 0.2), 0 1px 1px rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none
+}
+.navbar-default {
+	/*position: fixed;*/
+    transition: .10s ease;
+
+}
+.navbar-default .navbar-brand:hover {
+    background: #708090;
+    width: 100vw;
+	color: white;
+    /*z-index: -5;*/
+}
+
+/*.navbar-default a p.navbar-brand:after {
+	content: 'Welcome';
+    text-decoration: none;
+    transition: content 2s ease;
+
+}*/
+
+
+
 ul {
 	list-style-type: none;
+}
+
+
+/* SLIDING NAVIGATION */
+.parallax-1 { 
+    /* The image used */
+    background-image: url("../img/wood-1.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-2 { 
+    /* The image used */
+    background-image: url("../img/wood-2.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ordered-background {
+	background-color: tomato;
+	opacity: .5;
+}
+.ordered {
+	opacity: 1;
+	width: 50%;
+	margin: 0 auto;
+	padding: 100px;
+	text-align: center;
+	font-size: 30px;
+	color: black;
+}
+
+.menu {
+	height:1000px;
+	background-color:#708090;
+	font-size:36px
 }
